@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<!--
+	Directive by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Developer Kang HyungGoo Blog</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="stylesheets/main.css" />
+	</head>
+
+	<body class="is-preload">
+	
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<div class="container">
+				<a class="navbar-brand" href="#">Portpolio</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+			</div>
+		</nav>
+
+		<!-- Header -->
+			<div id="header">
+				<span class="logo icon fa-paper-plane"></span>
+				<h1>cout << "Hello, World!" << endl;</h1>
+				<p>안녕하세요. 개발자 강형구입니다.</p>
+			</div>
+
+		<!-- Main -->
+			<div id="main">
+				
+				<header class="major direction-container medium">
+					<h2>Projects</h2>
+				</header>
+
+				<div class="box direction-container">
+					<table class="default">
+						<% for(var i = 0 ; i < size; i++) { %>
+						<tr>
+							<td><a href="<%=project[i].url%>" class="image"><img src="projects/<%=project[i].pic%>" alt=""/></a></td>
+							<td>
+								<h3 href="<%=project[i].url%>"><%=project[i].header%></h3>
+								<p><%=project[i].contents%></p>
+								<p><b><%=project[i].skills%></b></p>
+							</td>
+						</tr>
+						<% } %>
+					</table>
+				</div>
+
+				<header class="major direction-container medium">
+					<h2>Technical stack</h2>
+				</header>
+
+				<div class="box direction-container">
+					<img src="images/techStack.png" alt="" width="100%" />
+				</div>
+
+			</div>
+
+		<!-- Footer -->
+			<div id="footer">
+				<div class="direction-container medium">
+
+					<header class="major last">
+						<h2>Contact</h2>
+					</header>
+
+					<ul class="icons">
+						<li><a href="https://www.instagram.com/h9._.k/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://github.com/4Moyede" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+
+				</div>
+			</div>
+
+		<!-- Scripts -->
+			<script src="javascripts/jquery.min.js"></script>
+			<script src="javascripts/browser.min.js"></script>
+			<script src="javascripts/breakpoints.min.js"></script>
+			<script src="javascripts/util.js"></script>
+			<script src="javascripts/main.js"></script>
+			<script src="vendor/jquery/jquery.min.js"></script>
+			<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+	</body>
+</html>
