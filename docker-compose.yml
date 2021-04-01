@@ -1,0 +1,18 @@
+# docker-compose.yml
+
+version: '3'
+
+services:
+
+  mongodb:
+    image: mongo
+    container_name: database
+
+  node:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: server
+    ports: 
+      - "8080:8080"
+    
