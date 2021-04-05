@@ -1,0 +1,39 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4Moyede/4Moyede_Blog.git"
+  },
+  "keywords": [
+    "blog",
+    "javascript",
+    "html",
+    "css",
+    "express",
+    "node.js"
+  ],
+  "author": "4Moyede",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4Moyede/4Moyede_Blog/issues"
+  },
+  "homepage": "https://github.com/4Moyede/4Moyede_Blog#readme",
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "^3.0.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "node-fetch": "^2.6.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "main": "app.js",
+  "description": ""
+}
