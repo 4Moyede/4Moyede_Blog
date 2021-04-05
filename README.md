@@ -7,6 +7,6 @@ Portfolio 용 웹 페이지.
 
 ## Architecture
 
-Docker, Express.js, MongoDB 사용.
+Docker, Express.js, Django, MongoDB Altas사용.
 
-![arch](public/images/architecture.png)
+![arch](img/architecture.png)
