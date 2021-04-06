@@ -51,13 +51,13 @@
 
 				<div class="box alt direction-container">
 					<% for(var i = 0; i < projects.length; i++) { %>
-						<a href="<%=projects[i].url%>" class="image">
+						<a href="<%=projects[i].url%>">
 						<% if(i % 2 == 0) {%>
 							<section class="feature right">
 						<% } else { %>
 							<section class="feature left">
 						<% } %>
-								<img src="<%=projects[i].thumbnail%>" alt="">
+								<div class="image"><img src="<%=projects[i].thumbnail%>" alt=""></div>
 								<div class="content">
 									<h3 href="<%=projects[i].url%>"><%=projects[i].name%></h3>
 									<pre><%=projects[i].detail%></pre>

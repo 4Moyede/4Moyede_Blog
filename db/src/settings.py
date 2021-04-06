@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '172.20.0.2',
     '172.20.0.3',
+    'localhost',
 ]
 
 
@@ -120,6 +121,7 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
     'https://172.20.0.2:8000',
     'https://172.20.0.3:8080',
+    'https://localhost:8080'
 ]
 CORS_URLS_REGEX = r'^/api/.*$'
 CORS_ALLOW_METHODS = (
