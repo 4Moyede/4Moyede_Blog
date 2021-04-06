@@ -2658,8 +2658,7 @@ nav a{
 
 	.feature {
 		position: relative;
-		height: 10rem;
-		padding-bottom: 1rem;
+		height: 30rem;
 	}
 
 		.feature:after {
@@ -2677,7 +2676,7 @@ nav a{
 			height: 100%;
 			overflow: hidden;
 			position: relative;
-			width: 20%;
+			width: 50%;
 		}
 
 			.feature .image img {
@@ -2695,8 +2694,9 @@ nav a{
 
 		.feature .content {
 			display: inline-block;
-			padding-left: 1em;
-			width: 79%;
+			padding: 3.5em;
+			vertical-align: middle;
+			width: 48%;
 		}
 
 			.feature .content h3 {
@@ -2705,6 +2705,10 @@ nav a{
 
 			.feature .content :last-child {
 				margin: 0;
+			}
+
+			.feature .content pre {
+				overflow: hidden;
 			}
 
 		.feature.left {
@@ -2722,6 +2726,7 @@ nav a{
 
 			.feature.left .content {
 				padding-right: 0;
+				text-align: left;
 			}
 
 		.feature.right {
@@ -2739,6 +2744,7 @@ nav a{
 
 			.feature.right .content {
 				padding-left: 0;
+				text-align: left;
 			}
 
 		.feature.long .content {
