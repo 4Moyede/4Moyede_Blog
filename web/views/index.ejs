@@ -49,19 +49,21 @@
 					<h2>Projects</h2>
 				</header>
 
-				<div class="box direction-container">
-					<table class="default">
-						<% for(var i = 0; i < projects.length; i++) { %>
-						<tr>
-							<td> <a href="<%=projects[i].url%>" class="image"><img src="<%=projects[i].thumbnail%>" alt=""> </a></td>
-							<td>
-								<h3 href="<%=projects[i].url%>"><%=projects[i].name%></h3>
-								<p><%=projects[i].detail%></p>
-								<p><%=projects[i].techStack%></p>
-							</td>
-						</tr>
+				<div class="box alt direction-container">
+					<% for(var i = 0; i < projects.length; i++) { %>
+						<% if(i % 2 == 0) {%>
+							<section class="feature right">
+						<% } else { %>
+							<section class="feature left">
 						<% } %>
-					</table>
+								<a href="<%=projects[i].url%>" class="image"><img src="<%=projects[i].thumbnail%>" alt=""> </a>
+								<div class="content">
+									<h3 href="<%=projects[i].url%>"><%=projects[i].name%></h3>
+									<pre><%=projects[i].detail%></pre>
+									<p><%=projects[i].techStack%></p>
+								</div>
+							</section>
+					<% } %>
 				</div>
 
 				<header class="major direction-container medium">
