@@ -1,5 +1,7 @@
 node_modules/
 key/
-projects/
+
+web/public/images/projects/*
+!web/public/images/projects/__init__
 
 __pycache__/
