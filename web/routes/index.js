@@ -1,17 +1,20 @@
 const express = require('express');
-const fetch = require('node-fetch')
+const fetch = require('node-fetch');
+const async = require('async');
+const googleAPI = require('./drive');
 
-var router = express.Router();
+let router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-
+router.get('/', (req, res, next) => {
+  googleAPI.download();
   fetch("http://172.20.0.2:8000/api/data")
     .then(data => {
-        data.json().then( contents => {
+      data.json()
+        .then(contents => {
           res.render('index.ejs', contents);
-        })
-      });
+        });
+    });
 
 });
 
