@@ -33,24 +33,22 @@ class googleAPI {
           if (files.length) {
             files.map((file) => {
               let path = this.FILEPATH + file.name;
-              try{ fs.statSync(path); } catch { 
-                this.drive.files
-                  .get({ fileId: file.id, alt: 'media' }, { responseType: 'stream' })
-                  .then(res => {
-                    const dest = fs.createWriteStream(path);
+              this.drive.files
+                .get({ fileId: file.id, alt: 'media' }, { responseType: 'stream' })
+                .then(res => {
+                  const dest = fs.createWriteStream(path);
 
-                    res.data
-                      .on('error', err => {
-                        console.log(`GET /google/drive/${file.name} \x1b[31m404\x1b[0m`)
-                        reject();
-                      })
-                      .on('end', () => {
-                        console.log(`GET /google/drive/${file.name} \x1b[32m200\x1b[0m`);
-                        resolve();
-                      })
-                      .pipe(dest);
-                  });
-              }
+                  res.data
+                    .on('error', err => {
+                      console.log(`GET /google/drive/${file.name} \x1b[31m404\x1b[0m`)
+                      reject();
+                    })
+                    .on('end', () => {
+                      console.log(`GET /google/drive/${file.name} \x1b[32m200\x1b[0m`);
+                      resolve();
+                    })
+                    .pipe(dest);
+                });
             });
           }
         }
