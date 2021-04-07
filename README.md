@@ -7,6 +7,7 @@ Portfolio 용 웹 페이지.
 
 ## Architecture
 
-Docker, Express.js, Django, MongoDB Altas사용.
+* Raspberry Pi 3B+, Ubuntu 20.04 LTS
+* Docker, Express.js, Django, MongoDB Altas, Google Drive API.
 
 ![arch](img/architecture.png)
