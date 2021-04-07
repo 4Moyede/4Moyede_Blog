@@ -1,6 +1,5 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const async = require('async');
 const googleAPI = require('./drive');
 
 let router = express.Router();
