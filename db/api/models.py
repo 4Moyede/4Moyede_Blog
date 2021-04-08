@@ -5,23 +5,24 @@ class Introduce(models.Model):
     objects = models.DjongoManager()
 
     id = models.ObjectIdField(db_column='_id', primary_key=True)
-    detail = models.TextField()
+    profile = models.TextField(default=" ", blank=True, null=True)
+    detail = models.TextField(default=" ", blank=True, null=True)
 
 
 class Projects(models.Model):
     objects = models.DjongoManager()
 
     id = models.ObjectIdField(db_column='_id', primary_key=True)
-    url = models.TextField()
-    name = models.TextField()
-    thumbnail = models.TextField()
-    detail = models.TextField()
-    techStack = models.TextField()
+    url = models.TextField(default="https://github.com/4Moyede/", blank=True, null=True)
+    name = models.TextField(default=" ", blank=True, null=True)
+    thumbnail = models.TextField(default=" ", blank=True, null=True)
+    detail = models.TextField(default=" ", blank=True, null=True)
+    techStack = models.TextField(default=" ", blank=True, null=True)
 
 
 class TechStack(models.Model):
     objects = models.DjongoManager()
 
     id = models.ObjectIdField(db_column='_id', primary_key=True)
-    tech = models.TextField()
-    skill = models.IntegerField()
+    tech = models.TextField(default=" ", blank=True, null=True)
+    skill = models.IntegerField(default=0, blank=True, null=True)
