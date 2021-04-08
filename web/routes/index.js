@@ -8,7 +8,7 @@ let router = express.Router();
 router.get('/', (req, res, next) => {
   googleAPI.download()
     .then(function () {
-      fetch("http://172.20.0.2:8000/api/data")
+      fetch("http://localhost:8000/api/data")
         .then(data => {
           data.json()
             .then(contents => {

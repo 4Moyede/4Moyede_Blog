@@ -2707,10 +2707,6 @@ nav a{
 				margin: 0;
 			}
 
-			.feature .content pre {
-				overflow: hidden;
-			}
-
 		.feature.left {
 			text-align: left;
 		}
@@ -3348,4 +3344,9 @@ nav a{
 
 .star {
 	height : 20px;
+}
+
+.detail {
+	border-bottom-color: none;
+	color: #474148;
 }
