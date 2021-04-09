@@ -10,7 +10,7 @@ router.get('/', (req, res, next) => {
       data.json()
         .then(contents => {
           res.render('index.ejs', contents);
-        }
+        });
     });
 });
 
