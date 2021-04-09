@@ -1,7 +1,6 @@
 from django.contrib import admin
 from api.models import Introduce, Projects, TechStack
 
-
 from apiclient.discovery import build
 from oauth2client.service_account import ServiceAccountCredentials
 from googleapiclient.http import MediaIoBaseDownload
@@ -18,13 +17,13 @@ BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 APIKEY_FILE = path.join(path.join(BASE_DIR, 'key'), 'service_account.json')
 SSHKEY_FILE = path.join(path.join(BASE_DIR, 'key'), 'ssh_key.json')
 FILE_DIR = path.join(BASE_DIR, 'download')
+
 SCOPE = ['https://www.googleapis.com/auth/drive']
 
 credentials = ServiceAccountCredentials.from_json_keyfile_name(APIKEY_FILE, scopes=SCOPE)
 service = build(serviceName='drive', version='v3', credentials=credentials)
 
 def DownloadThumbnail(modeladmin, request, queryset):
-
     results = service.files().list(pageSize=10, fields="nextPageToken, files(id, name)").execute()
     items = results.get('files', [])
 
@@ -82,21 +81,7 @@ class ProjectsAdmin(admin.ModelAdmin):
 class TechStackAdmin(admin.ModelAdmin):
     pass
 
+
 admin.site.register(Introduce, IntroduceAdmin)
 admin.site.register(Projects, ProjectsAdmin)
 admin.site.register(TechStack, TechStackAdmin)
-
-
-if __name__ == "__main__":
-    credentials = ServiceAccountCredentials.from_json_keyfile_name(KEY_FILE, scopes=SCOPE)
-    service = build(serviceName='drive', version='v3', credentials=credentials)
-
-    results = service.files().list(pageSize=10, fields="nextPageToken, files(id, name)").execute()
-    items = results.get('files', [])
-
-    if not items:
-        print('No files found. Check Google Drive')
-    else:
-        for item in items:
-            print(u'{0} ({1})'.format(item['name'], item['id']))
-   
