@@ -1,7 +1,10 @@
 node_modules/
 key/
 
+db/download/*
+!db/download/__init__
+
 web/public/images/projects/*
-!web/public/images/projects/__init__
+!web/public/images/projects/loading.png
 
 __pycache__/
