@@ -27,6 +27,7 @@ SECRET_KEY = 'o+r!lo8-cat==a=z-x14=cce08p&t#$0&my37%q@omf7sk&2@0'
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '172.20.0.2',
     '4moyede.duckdns.org',
     '192.168.55.211',
     '192.168.0.20',
