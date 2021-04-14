@@ -5,6 +5,7 @@ class Introduce(models.Model):
     objects = models.DjongoManager()
 
     id = models.ObjectIdField(db_column='_id', primary_key=True)
+    picture = models.TextField(default="favicon.ico")
     profile = models.TextField(default=" ", blank=True, null=True)
     detail = models.TextField(default=" ", blank=True, null=True)
 
