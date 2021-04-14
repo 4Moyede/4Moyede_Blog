@@ -23,6 +23,28 @@ SCOPE = ['https://www.googleapis.com/auth/drive']
 credentials = ServiceAccountCredentials.from_json_keyfile_name(APIKEY_FILE, scopes=SCOPE)
 service = build(serviceName='drive', version='v3', credentials=credentials)
 
+def DownloadProfileImage(modeladmin, request, queryset):
+    results = service.files().list(pageSize=10, fields="nextPageToken, files(id, name)").execute()
+    items = results.get('files', [])
+
+    if not items:
+        print('No files found. Check Google Drive')
+        for query in queryset:
+            query.picture = "favicon.ico"
+    else:
+        found = False
+        for query in queryset:
+            for item in items:
+                if query.picture == item['name']:
+                    FILE_PATH = path.join(FILE_DIR, item['name'])
+                    download(item['id'], FILE_PATH)
+                    transfer(FILE_PATH, "/app/server/public/images/")
+                    found = True
+                    break
+            if not found:
+                query.picture = "favicon.ico"
+DownloadProfileImage.short_description = "Download Profile Image file from google drive"
+
 def DownloadThumbnail(modeladmin, request, queryset):
     results = service.files().list(pageSize=10, fields="nextPageToken, files(id, name)").execute()
     items = results.get('files', [])
@@ -38,7 +60,7 @@ def DownloadThumbnail(modeladmin, request, queryset):
                 if query.thumbnail == item['name']:
                     FILE_PATH = path.join(FILE_DIR, item['name'])
                     download(item['id'], FILE_PATH)
-                    transfer(FILE_PATH)
+                    transfer(FILE_PATH, "/app/server/public/images/projects/")
                     found = True
                     break
             if not found:
@@ -58,7 +80,7 @@ def download(fid, path):
     img = Image.open((fh))
     img.save(path)
     
-def transfer(path):
+def transfer(path, remote_path):
     auth = loads(open(SSHKEY_FILE).read())
 
     ssh = SSHClient()
@@ -68,12 +90,12 @@ def transfer(path):
 
     # SCPCLient takes a paramiko transport as an argument
     with SCPClient(ssh.get_transport()) as scp:
-        scp.put(path, remote_path="/app/server/public/images/projects/")
+        scp.put(path, remote_path=remote_path)
 
 
 # Register your models here.
 class IntroduceAdmin(admin.ModelAdmin):
-    pass
+    actions = [ DownloadProfileImage ]
 
 class ProjectsAdmin(admin.ModelAdmin):
     actions = [ DownloadThumbnail ]
