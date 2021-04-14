@@ -40,8 +40,15 @@
 				</header>
 
 				<div class="box direction-container">
-					<%-introduce[0].profile%>
-					<%-introduce[0].detail%>
+					<div class="row">
+						<div class="col-4">
+							<div class="rounded-circle"> <img class="rounded-circle" src="image/<%=introduce[0].picture%>" alt="" style="width: 100%; height: 100%;"> </div>
+						</div>
+						<div class="col-8">
+							<%-introduce[0].profile%>
+							<%-introduce[0].detail%>
+						</div>
+					</div>
 				</div>
 
 				<header class="major direction-container medium">
