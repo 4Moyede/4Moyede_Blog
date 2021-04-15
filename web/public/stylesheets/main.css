@@ -234,18 +234,6 @@ nav a{
 		@media screen and (max-width: 1280px) {
 
 			.direction-container {
-				width: 48em;
-			}
-
-				.direction-container.medium {
-					width: 36em;
-				}
-
-		}
-
-		@media screen and (max-width: 980px) {
-
-			.direction-container {
 				width: 95%;
 			}
 
@@ -2707,6 +2695,12 @@ nav a{
 				margin: 0;
 			}
 
+			.feature .content .detail {
+				border-bottom-color: none;
+				color: #474148;
+				margin-bottom: 0;
+			}
+
 		.feature.left {
 			text-align: left;
 		}
@@ -2967,6 +2961,51 @@ nav a{
 			background: #ffffff;
 		}
 
+
+/* star */
+
+.star {
+	height : 20px;
+}
+
+/* profile */
+
+.profile {
+	height: 20rem;
+	text-align: center;
+}
+
+	.profile .profile-picture {
+		position: relative;
+		width: 13rem;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.profile .profile-detail {
+		position: relative;
+		width: auto;
+		text-align: initial;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+		.profile .profile-detail p {
+			margin: 0;
+		}
+
+		.profile .profile-detail .detail i {
+			padding: 0 20px 0 50px;
+		}
+
+		.profile .profile-detail table tr td:first-child {
+			width:180px;
+		}
+
+		.profile .profile-detail table:last-child {
+			margin: 0;
+		}
+		
 /* Wide */
 
 	@media screen and (max-width: 1680px) {
@@ -3006,6 +3045,12 @@ nav a{
 					line-height: 1.65em;
 				}
 
+		/* profile */
+
+			.profile {
+				height: 17rem;
+			}
+		
 	}
 
 /* Normal */
@@ -3102,7 +3147,13 @@ nav a{
 			#main {
 				padding: 4em 0 3em 0;
 			}
+		
+		/* profile */
 
+		.profile {
+			height: 16rem;
+		}
+	
 	}
 
 /* Narrow */
@@ -3114,6 +3165,12 @@ nav a{
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
+
+		/* profile */
+
+		.profile {
+			height: 15rem;
+		}
 
 	}
 
@@ -3133,6 +3190,16 @@ nav a{
 				padding-right: 2em;
 			}
 
+		/* profile */
+
+		.profile .profile-detail .detail i {
+			padding: 0 20px 0 20px;
+		}
+
+		.profile .profile-detail table tr td:first-child {
+			width:150px;
+		}
+	
 	}
 
 /* Mobile */
@@ -3263,6 +3330,19 @@ nav a{
 				padding: 2em 0 2em 0;
 			}
 
+		/* profile */
+
+		.profile {
+			height: 28rem;
+		}
+		
+			.profile .profile-detail table tr td:first-child {
+				width:120px;
+			}
+
+			.profile .profile-detail .detail i {
+				padding: 0 20px 0 0;
+			}
 	}
 
 /* Mobile (Portrait) */
@@ -3341,13 +3421,3 @@ nav a{
 				}
 
 	}
-
-.star {
-	height : 20px;
-}
-
-.detail {
-	border-bottom-color: none;
-	color: #474148;
-	margin-bottom: 0;
-}

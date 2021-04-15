@@ -40,15 +40,17 @@
 				</header>
 
 				<div class="box direction-container">
-					<div class="row">
-						<div class="col-4">
-							<div class="rounded-circle"> <img class="rounded-circle" src="images/<%=introduce[0].picture%>" alt="" style="width: 100%; height: 100%;"> </div>
+					<section class="profile">
+						<% for(var i = 0; i < introduce.length; i++) { %>
+						<div class="profile-picture">
+							<div class="rounded-circle"> <img class="rounded-circle" src="images/favicon.ico" alt="" style="width: 100%; height: 100%;"> </div>
 						</div>
-						<div class="col-8">
-							<%-introduce[0].profile%>
-							<%-introduce[0].detail%>
+						<div class="profile-detail">
+							<%-introduce[i].profile%>
+							<%-introduce[i].detail%>
 						</div>
-					</div>
+					</section>
+					<% } %>
 				</div>
 
 				<header class="major direction-container medium">
