@@ -12,13 +12,12 @@ router.get('/', (req, res, next) => {
           res.render('index.ejs', contents);
         })
         .catch(error => {
-          console.log(error);
+          console.log("\x1b[31m" + error.name + "\x1b[0m: " + error.message);
           res.redirect('/');
         });
     })
     .catch(error => {
       console.log("\x1b[31m" + error.name + "\x1b[0m: " + error.message);
-
       res.render('index.ejs', {"introduce":[], "projects":[], "techstack":[]});
     });
 });
