@@ -14,6 +14,8 @@ services:
       - "8000:8000"
     expose: 
       - "8000"
+    volumes: 
+      - ./db:/app/database
     networks:
       network:
         ipv4_address: 172.20.0.2
@@ -27,6 +29,8 @@ services:
       - "8080:8080"
     expose:
       - "22"
+    volumes: 
+      - ./web:/app/server
     networks:
       network:
         ipv4_address: 172.20.0.3
