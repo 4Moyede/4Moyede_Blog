@@ -3002,6 +3002,10 @@ nav a{
 			width:180px;
 		}
 
+		.profile .profile-detail table tr td:last-child {
+			padding-left: 30px;
+		}
+
 		.profile .profile-detail table:last-child {
 			margin: 0;
 		}
@@ -3172,6 +3176,18 @@ nav a{
 			height: 15rem;
 		}
 
+			.profile .profile-detail .detail i {
+				padding: 0 10px 0 10px;
+			}
+
+			.profile .profile-detail table tr td:first-child {
+				width:110px;
+			}
+
+			.profile .profile-detail table tr td:last-child {
+				padding-left: 15px;
+			}
+
 	}
 
 /* Narrower */
@@ -3190,16 +3206,6 @@ nav a{
 				padding-right: 2em;
 			}
 
-		/* profile */
-
-		.profile .profile-detail .detail i {
-			padding: 0 20px 0 20px;
-		}
-
-		.profile .profile-detail table tr td:first-child {
-			width:150px;
-		}
-	
 	}
 
 /* Mobile */
