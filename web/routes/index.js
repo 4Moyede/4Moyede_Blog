@@ -15,6 +15,11 @@ router.get('/', (req, res, next) => {
           console.log(error);
           res.redirect('/');
         });
+    })
+    .catch(error => {
+      console.log("\x1b[31m" + error.name + "\x1b[0m: " + error.message);
+
+      res.render('index.ejs', {"introduce":[], "projects":[], "techstack":[]});
     });
 });
 
