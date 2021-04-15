@@ -3194,6 +3194,12 @@ nav a{
 
 	@media screen and (max-width: 840px) {
 
+		/* Basic */
+
+			body, input, select, textarea {
+				font-size: 11pt;
+			}
+
 		/* Section/Article */
 
 			header.major {
@@ -3210,7 +3216,7 @@ nav a{
 
 /* Mobile */
 
-	@media screen and (max-width: 738px) {
+	@media screen and (max-width: 736px) {
 
 		/* Basic */
 
