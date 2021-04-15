@@ -10,6 +10,10 @@ router.get('/', (req, res, next) => {
       data.json()
         .then(contents => {
           res.render('index.ejs', contents);
+        })
+        .catch(error => {
+          console.log(error);
+          res.redirect('/');
         });
     });
 });
